@@ -7,26 +7,7 @@ using namespace std;
 
 void gotoxy(int xpos, int ypos)
 {
-  COORD scrn;
-  HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-  scrn.X = xpos; scrn.Y = ypos;
-  SetConsoleCursorPosition(hOuput,scrn);
-}
-int xx[85]={0};
-int yy[21]={0};
-class Ball{
-	
-public:
-	class Ball * nextPtr;
-	int x,y,z;   
-	unsigned char s;// 右上 z=1   右下z=2  左下z=3   左上z=4
-public:
-	
-	Ball(){
-		nextPtr=nullptr;
-		do{
-		x= (rand()%78)+1;
-		y= (rand()%19)+1;
+
 		z= (rand()%4)+1;
 		}while(x!=40&&y!=10);
 		xx[x]+=1;
